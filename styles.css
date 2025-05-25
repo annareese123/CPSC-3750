@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+header {
+  padding: 4rem 0 1rem;
+  margin: 2rem 0 3rem;
+  background: #fff;
+  border: 3px solid #000;
+  box-shadow: 8px 8px 0px #000;
+  text-align: center;
+}
+
+header h1 { 
+  font-size: 2.8rem; 
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+nav {
+  margin-bottom: 1.5rem;
+}
+
+#navbar {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  gap: 15px;
+}
+
+#navbar li a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #522d80; 
+  text-decoration: none;
+  padding: 8px 15px;
+  border: 2px solid #522d80;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+#navbar li a:hover {
+  background-color: #522d80;
+  color: white;
+}
+
+#navbar li a.active {
+  background-color: #f56600; 
+  border-color: #f56600;
+  color: white;
+}
+
+.main-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.gallery {
+  flex: 0 0 300px;
+}
+
+.gallery-item {
+  background: #fff;
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0px #000;
+  margin-bottom: 1rem;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.about {
+  flex: 1;
+}
+
+.about h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.about h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #000;
+}
+
+.about-content {
+  font-size: 1.5rem;
+  color: #333;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.about-content p {
+  margin-bottom: 1rem;
+}
+
+.about-content strong {
+  font-weight: 600;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 1rem; }
+  header h1 { font-size: 2.2rem; }
+  #navbar {
+    flex-wrap: wrap;
+  }
+  .main-content {
+    flex-direction: column;
+  }
+  .gallery {
+    flex: none;
+    width: 100%;
+  }
+  .gallery-item {
+    margin-bottom: 1.5rem;
+  }
+}
