@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GroupCSS1 - CSS Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        header {
+            background-color: #522D80;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: center;
+            padding: 0 15px;
+        }
+
+        #top_nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        #top_nav li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        #top_nav li a:hover,
+        #top_nav li a.active {
+            background-color: cyan;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .intro {
+            background-color: lightblue;
+            padding: 10px;
+        }
+
+        .syntax-example {
+            color: red;
+            font-size: 18px;
+        }
+
+        h1 { color: blue; }
+        .highlight { background-color: yellow; }
+        #special { font-weight: bold; }
+
+        .red-text { color: red; }
+        .hex-color { color: #00FF00; }
+        .rgb-color { color: rgb(255, 0, 255); }
+
+        .bg-color {
+            background-color: orange;
+            padding: 10px;
+        }
+
+        .solid-border { border: 2px solid black; padding: 5px; }
+        .dashed-border { border: 3px dashed red; padding: 5px; }
+
+        .margin-example {
+            background-color: lightgreen;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .padding-example {
+            background-color: pink;
+            padding: 30px;
+        }
+
+        .size-box {
+            width: 200px;
+            height: 100px;
+            background-color: purple;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <nav id="top_nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="layout.html">Fixed Fluid Layout</a></li>
+          <li><a href="betting-home.html">Demo HTML/CSS</a></li>
+          <li><a href="GroupCSS1.html" class="active">CSS Demo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <h1>CSS Demo Page</h1>
+
+  <h2>1. CSS HOME</h2>
+  <p>This page uses basic CSS styling</p>
+
+  <h2>2. CSS INTRODUCTION</h2>
+  <div class="intro">This blue box shows CSS introduction styling</div>
+
+  <h2>3. CSS SYNTAX</h2>
+  <p class="syntax-example">This red text shows CSS syntax: { color: red; }</p>
+
+  <h2>4. CSS SELECTORS</h2>
+  <p>H1 element selector makes headers blue</p>
+  <p class="highlight">Class selector makes this yellow background</p>
+  <p id="special">ID selector makes this text bold</p>
+
+  <h2>5. CSS HOW TO</h2>
+  <p>This page uses INTERNAL CSS <strong>(CSS code is inside the HTML file)</strong></p>
+
+  <h2>6. CSS COLORS</h2>
+  <p class="red-text">Red color name</p>
+  <p class="hex-color">Green hex color #00FF00</p>
+  <p class="rgb-color">Purple RGB color rgb(255, 0, 255)</p>
+
+  <h2>7. CSS BACKGROUNDS</h2>
+  <div class="bg-color">Orange background color</div>
+
+  <h2>8. CSS BORDERS</h2>
+  <div class="solid-border">Solid black border</div>
+  <br>
+  <div class="dashed-border">Dashed red border</div>
+
+  <h2>9. CSS MARGINS</h2>
+  <div class="margin-example">This green box has 20px margins on all sides</div>
+
+  <h2>10. CSS PADDING</h2>
+  <div class="padding-example">This pink box has 30px padding inside</div>
+
+  <h2>11. CSS HEIGHT/WIDTH</h2>
+  <div class="size-box">This purple box is 200px wide and 100px tall</div>
+
+</body>
+</html>
