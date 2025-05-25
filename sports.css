@@ -1,0 +1,351 @@
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #000000;
+  color: #ffffff;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+header {
+  padding: 3rem 0 2rem;
+  margin: 2rem 0 3rem;
+  background: #1a0d26;
+  border: 2px solid #4a1a5c;
+  box-shadow: 4px 4px 0px #0d0d0d;
+  text-align: center;
+}
+
+header h1 { 
+  font-size: 2.8rem; 
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+nav {
+  margin-top: 1.5rem;
+}
+
+nav a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 15px;
+  border: 2px solid #4a1a5c;
+  border-radius: 4px;
+  margin: 0 8px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  background-color: transparent;
+}
+
+nav a:hover {
+  background-color: #4a1a5c;
+  color: #ffffff;
+}
+
+nav a.active {
+  background-color: #6b2d7a;
+  border-color: #6b2d7a;
+  color: #ffffff;
+}
+
+body.home-page {
+  background: url('gambling.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body.home-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+.home-main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.home-main-content h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #4a1a5c;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid #4a1a5c;
+  box-shadow: 3px 3px 0px #0d0d0d;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #6b2d7a;
+  color: #ffffff;
+  border-color: #6b2d7a;
+  box-shadow: 3px 3px 0px #0d0d0d;
+  transform: translate(-1px, -1px);
+}
+
+body.bets-page {
+  background: #000000;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 3rem 0 2rem;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: #6b2d7a;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: #6b2d7a;
+}
+
+.content p {
+  font-size: 1.2rem;
+  color: #cccccc;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.gallery-item {
+  background: #1a0d26;
+  border: 2px solid #4a1a5c;
+  box-shadow: 3px 3px 0px #0d0d0d;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #0d0d0d;
+  border-color: #6b2d7a;
+}
+
+.gallery img,
+.gallery-item img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+footer {
+  background: #1a0d26;
+  border: 2px solid #4a1a5c;
+  box-shadow: 4px 4px 0px #0d0d0d;
+  margin: 3rem 2rem 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+footer p {
+  font-size: 1rem;
+  color: #cccccc;
+  font-weight: 500;
+}
+
+footer a {
+  color: #6b2d7a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: #8b4a99;
+}
+
+aside {
+  background: #1a0d26;
+  border: 2px solid #4a1a5c;
+  box-shadow: 3px 3px 0px #0d0d0d;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+}
+
+aside h4 {
+  color: #6b2d7a;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+aside p {
+  color: #cccccc;
+}
+
+section header {
+  border-bottom: 2px solid #4a1a5c;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+section footer {
+  border-top: 2px solid #4a1a5c;
+  padding-top: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #cccccc;
+}
+
+.main-content {
+  background-color: transparent !important;
+}
+
+.main-content h1 {
+  color: white !important;
+}
+
+nav[style*="background: blue"] {
+  background: #1a0d26 !important;
+}
+
+section[style*="background: blue"] {
+  background: #1a0d26 !important;
+}
+
+@media (max-width: 768px) {
+  .container { 
+    padding: 0 1rem; 
+  }
+
+  header {
+    margin: 1rem 0 2rem;
+    padding: 2rem 0 1.5rem;
+  }
+
+  header h1 { 
+    font-size: 2.2rem; 
+  }
+
+  nav a {
+    margin: 5px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .home-main-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  footer {
+    margin: 2rem 1rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .home-main-content h2 {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}

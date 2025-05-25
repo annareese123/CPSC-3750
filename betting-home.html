@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sports Betting</title>
+  <link rel="stylesheet" href="sports.css">
+  <style>
+    /* Couldn't figure out how to use some of this css in the sports.css file so had to use some inline css */
+    body {
+      background: url('gambling.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      text-align: center;
+      padding: 50px 40px;
+    }
+
+    .main-content h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #4a1a5c;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #6b2d7a;
+    }
+
+    header {
+      z-index: 10;
+      position: relative;
+    }
+
+    footer {
+      z-index: 10;
+      position: relative;
+      margin-top: 0;
+    }
+
+    aside {
+      background: rgba(26, 13, 38, 0.9); 
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 5px;
+      color: white;
+    }
+
+    .inline-nav {
+      text-align: center;
+      background: #1a0d26;
+      padding: 10px;
+    }
+
+    .inline-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .inline-nav a:hover {
+      color: #6b2d7a;
+    }
+
+    .features-section {
+      background: #1a0d26;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 8px;
+    }
+
+    .features-section h2 {
+      color: white;
+    }
+
+    .features-section p {
+      color: #cccccc;
+    }
+
+    .features-section a {
+      color: #6b2d7a;
+    }
+
+    .features-section a:hover {
+      color: #8b4a99;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Sports Betting Hub</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="betting-home.html">Sports Home</a> |
+      <a href="GroupCSS1.html">CSS Demo</a>
+    </nav>
+  </header>
+
+  <!-- inpage nav -->
+  <nav class="inline-nav">
+    <a href="#welcome">Proceed</a>
+  </nav>
+
+  <aside>
+    <h4>Fair Warning...</h4>
+    <p>Gambling is such a niche hobby of mine :)</p>
+  </aside>
+
+  <main>
+    <section id="welcome" class="main-content">
+      <header>
+        <h1>Welcome to Sports Betting</h1>
+      </header>
+      <a href="betting.html" class="btn">Explore More</a>
+      <footer>
+        <p style="color: white; margin-top: 20px;">Gamble responsibly :)</p>
+      </footer>
+    </section>
+
+    <section id="features" class="features-section">
+      <header>
+        <h2>Check out how to get started betting. </h2>
+      </header>
+      <p>This page shows betting platforms & real results.</p>
+      <footer>
+        <p>Check out <a href="my-bets.html">my betting journey</a>!</p>
+      </footer>
+    </section>
+  </main>
+
+  <footer>
+    <p>CPSC 3750 Demo HTML/CSS | <a href="mailto:jswanie@g.clemson.edu">Contact Me</a></p>
+  </footer>
+</body>
+</html>
