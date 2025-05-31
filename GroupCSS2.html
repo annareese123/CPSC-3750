@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Elements Demo</title>
+    <link rel="stylesheet" href="more.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <header>
+        <h1>CSS Elements Demonstration</h1>
+        <p>Sample Webpage</p>
+    </header>
+
+    <!-- nav bar for in page navigation-->
+    <nav>
+        <ul>
+            <li><a href="#box-model">Box Model</a></li>
+            <li><a href="#icons">Icons</a></li>
+            <li><a href="#lists">Lists</a></li>
+            <li><a href="#tables">Tables</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#float">Float</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- BOX MODEL -->
+        <section id="box-model">
+            <h2>Box Model Element</h2>
+            <div class="box-demo">
+                <p>This box shows margin, border, &  padding</p>
+            </div>
+        </section>
+
+        <!-- ICONS -->
+        <section id="icons">
+            <h2>Icons Element</h2>
+            <div class="icons">
+                <i class="fas fa-home fa-2x"></i>
+                <i class="fas fa-info-circle fa-2x"></i>
+                <i class="fas fa-envelope fa-2x"></i>
+            </div>
+        </section>
+
+        <!-- LISTS -->
+        <section id="lists">
+            <h2>Lists Element</h2>
+            <div class="list-container">
+                <h3>Unordered List:</h3>
+                <ul>
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                </ul>
+                
+                <h3>Ordered List:</h3>
+                <ol>
+                    <li>Step one</li>
+                    <li>Step two</li>
+                    <li>Step three</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- TABLES -->
+        <section id="tables">
+            <h2>Responive Table</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>City</th>
+                            <th>Occupation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Joshua Swanier</td>
+                            <td>23</td>
+                            <td>Clemson</td>
+                            <td>Student</td>
+                        </tr>
+                        <tr>
+                            <td>Lebron James</td>
+                            <td>36</td>
+                            <td>Los Angeles</td>
+                            <td>NBA Player</td>
+                        </tr>
+                        <tr>
+                            <td>Bill Gates</td>
+                            <td>69</td>
+                            <td>Seattle</td>
+                            <td>CEO</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- IMAGE GALLERY -->
+        <section id="gallery">
+            <h2>Image Gallery Element</h2>
+            <div class="gallery">
+                <div class="gallery-item">Image 1</div>
+                <div class="gallery-item">Image 2</div>
+                <div class="gallery-item">Image 3</div>
+                <div class="gallery-item">Image 4</div>
+            </div>
+        </section>
+
+        <!-- FLOAT -->
+        <section id="float">
+            <h2>Float Property Element</h2>
+            <div class="float-container">
+                <div class="float-left">Float Left</div>
+                <div class="float-right">Float Right</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tincidunt posuere malesuada. Suspendisse ac felis ac ante tincidunt ullamcorper. 
+                Nulla vitae ligula vitae mi rhoncus adipiscing. Etiam congue felis id ante semper at imperdiet massa tempor. Nullam hendrerit fermentum ligula, 
+                sit amet pellentesque purus faucibus in. Sed molestie lacus mauris, ultrices accumsan sem. Phasellus facilisis malesuada sem, nec ornare ipsum 
+                dictum consectetur..</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>CSS Elements Demo | Sample Webpage</p>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch('navbar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+          });
+      });
+    </script>
+</body>
+</html>

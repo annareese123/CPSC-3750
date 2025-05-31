@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-* { 
-  box-sizing: border-box; 
-  margin: 0; 
-  padding: 0; 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -20,65 +20,53 @@ body {
   padding: 0 2rem;
 }
 
-header {
-  padding: 4rem 0 1rem;
-  margin: 2rem 0 3rem;
-  background: #fff;
-  border: 3px solid #000;
-  box-shadow: 8px 8px 0px #000;
-  text-align: center;
-}
-
-header h1 { 
-  font-size: 2.8rem; 
-  font-weight: 700;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 0.5rem;
-}
-
-.subtitle {
-  font-size: 1.1rem;
-  color: #666;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 1.5rem;
-}
-
-nav {
-  margin-bottom: 1.5rem;
-}
-
-#navbar {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  gap: 15px;
-}
-
-#navbar li a {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #522d80; 
-  text-decoration: none;
-  padding: 8px 15px;
-  border: 2px solid #522d80;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-#navbar li a:hover {
+/* New Header Styling */
+.new-header {
   background-color: #522d80;
   color: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#navbar li a.active {
-  background-color: #f56600; 
-  border-color: #f56600;
+.new-header h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  flex: 1 1 300px;
+}
+
+.new-header nav {
+  flex: 2 1 600px;
+}
+
+#new-navbar {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+#new-navbar li a {
   color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+#new-navbar li a:hover {
+  background-color: #f56600;
+}
+
+#new-navbar li a.active {
+  background-color: #f56600;
 }
 
 .main-content {
@@ -148,18 +136,28 @@ nav {
 }
 
 @media (max-width: 768px) {
-  .container { padding: 0 1rem; }
-  header h1 { font-size: 2.2rem; }
-  #navbar {
-    flex-wrap: wrap;
+  .container {
+    padding: 0 1rem;
   }
+
+  .new-header h1 {
+    font-size: 1.8rem;
+  }
+
+  #new-navbar {
+    justify-content: center;
+    gap: 10px;
+  }
+
   .main-content {
     flex-direction: column;
   }
+
   .gallery {
     flex: none;
     width: 100%;
   }
+
   .gallery-item {
     margin-bottom: 1.5rem;
   }

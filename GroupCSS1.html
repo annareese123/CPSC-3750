@@ -84,14 +84,7 @@
 
 <header>
   <div class="header-content">
-    <nav id="top_nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="layout.html">Fixed Fluid Layout</a></li>
-        <li><a href="betting-home.html">Demo HTML/CSS</a></li>
-        <li><a href="GroupCSS1.html" class="active">CSS Demo</a></li>
-      </ul>
-    </nav>
+    <div id="navbar"></div>
   </div>
 </header>
 
@@ -104,7 +97,7 @@
 <div class="intro">This blue box shows CSS introduction styling.</div>
 
 <h2>3. CSS SYNTAX</h2>
-<p class="syntax-example">This red text shows CSS syntax.</p>
+<p class="syntax-example">This text shows CSS syntax.</p>
 
 <h2>4. CSS SELECTORS</h2>
 <p class="highlight">Class selector makes this yellow background.</p>
@@ -136,6 +129,16 @@
 
 <h2>11. CSS HEIGHT/WIDTH</h2>
 <div class="size-box">200px x 100px box</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+  });
+</script>
 
 </body>
 </html>

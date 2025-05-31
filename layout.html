@@ -12,14 +12,8 @@
       <div class="logo">
         <img src="acmewidgets.jpg" alt="ACME Widgets LLC"/>
       </div>
-      <nav id="top_nav">
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="layout.html">Fixed Fluid Layout</a></li>
-          <li><a href="betting-home.html">Demo HTML/CSS</a></li>
-          <li><a href="GroupCSS1.html">CSS Demo</a></li>
-        </ul>
-      </nav>
+      <!-- Dynamically loaded navbar -->
+      <div id="navbar"></div>
     </div>
   </header>
 
@@ -54,6 +48,15 @@
   <footer>
     &copy; 2025 ACME Widgets. Summer - CPSC 3750 
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        });
+    });
+  </script>
 </body>
 </html>
-

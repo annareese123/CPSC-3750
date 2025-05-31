@@ -112,12 +112,7 @@
 
   <header>
     <h1>Sports Betting Hub</h1>
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="betting-home.html">Sports Home</a> |
-      <a href="layout.html">Fixed Fluid Layout</a> |
-      <a href="GroupCSS1.html">CSS Demo</a>
-    </nav>
+    <div id="navbar"></div>
   </header>
 
   <!-- inpage nav -->
@@ -155,5 +150,15 @@
   <footer>
     <p>CPSC 3750 Demo HTML/CSS | <a href="mailto:jswanie@g.clemson.edu">Contact Me</a></p>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        });
+    });
+  </script>
 </body>
 </html>
