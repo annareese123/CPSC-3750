@@ -1,0 +1,54 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#top_nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: #333;
+}
+
+#top_nav li {
+  margin: 0;
+}
+
+#top_nav a {
+  color: white;
+  padding: 14px 20px;
+  display: block;
+  text-decoration: none;
+}
+
+#top_nav a:hover {
+  background-color: #575757;
+}
+
+#controls {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+#viewingArea {
+  width: 75vw;
+  height: 75vh;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  border: 2px solid #333;
+}
+
+.button {
+  position: absolute;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}

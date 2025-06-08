@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Button Move</title>
+  <link rel="stylesheet" href="ButtonMove.css" />
+  <script defer src="ButtonMove.js"></script>
+</head>
+<body>
+
+  <!-- Nav -->
+  <div id="nav-container"></div>
+
+  <!-- Controls -->
+  <div id="controls">
+    <select id="colorSelector">
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+      <option value="yellow">Yellow</option>
+      <option value="white">White</option>
+    </select>
+    <button id="makeButton">Make Button</button>
+    <span id="totalLabel">Total: 0</span>
+    <button id="toggleMove">MOVE</button>
+  </div>
+
+  <!-- Viewing Area -->
+  <div id="viewingArea"></div>
+
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('nav-container').innerHTML = data;
+      });
+  </script>
+</body>
+</html>
