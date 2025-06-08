@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Sorting Example</title>
+  <link rel="stylesheet" href="SortDemo.css">
+  <script type="text/javascript" src="SortDemo.js" defer></script>
+</head>
+<body>
+  <div id="nav"></div>
+
+  <h1>Sorting String Arrays</h1>
+  <p>Enter two or more names in the field below, and the sorted list of names will appear in the textarea.</p>
+
+
+  <form name="theform">
+    <label for="nameInput">Name:</label>
+    <input type="text" id="nameInput" name="newname" size="20">
+    <button type="button" id="addButton" name="addname">Add</button>
+    <button type="button" id="clearButton">Clear</button>
+
+    <h2>Sorted Names</h2>
+    <textarea id="nameList" name="sorted" cols="60" rows="10" readonly></textarea>
+  </form>
+
+  <script>
+    // Navbar loader
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('nav').innerHTML = data;
+        });
+    });
+  </script>
+</body>
+</html>
