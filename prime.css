@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+input[type="number"] {
+  padding: 10px;
+  font-size: 16px;
+  width: 200px;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.lists {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.list-container {
+  width: 45%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #d0e0ff;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+
+#navbar-container nav {
+  background-color: palevioletred;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#navbar-container nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#navbar-container nav ul li {
+  margin: 0 15px;
+}
+
+#navbar-container nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 5px;
+}
+
+#navbar-container nav ul li a:hover {
+  color: greenyellow;
+  border-bottom: 2px solid greenyellow;
+}

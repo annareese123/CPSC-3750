@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prime Number Sorter</title>
+  <link rel="stylesheet" href="prime.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <div class="container">
+    <h1>Prime Number Sorter</h1>
+    <input type="number" id="numberInput" placeholder="Enter a number" min="2">
+    <button onclick="generateLists()">START</button>
+    <!--Prime Numbers-->
+    <div class="lists">
+      <div class="list-container prime">
+        <h2>Prime Numbers</h2>
+        <ul id="primeList"></ul>
+        <button onclick="sumList('prime')">SUM</button>
+        <div id="primeSum"></div>
+      </div>
+      <!--Non-Prime Numbers-->
+      <div class="list-container non-prime">
+        <h2>Non-Prime Numbers</h2>
+        <ul id="nonPrimeList"></ul>
+        <button onclick="sumList('non-prime')">SUM</button>
+        <div id="nonPrimeSum"></div>
+      </div>
+    </div>
+  </div>
+  <!--Dynamically load navbar-->
+  <script>
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-container').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading navbar:', error));
+  </script>
+  <script src="prime.js"></script>
+</body>
+</html>
