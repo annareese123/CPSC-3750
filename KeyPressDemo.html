@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Displaying Keypresses</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding-top: 60px;
+      text-align: center;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    #top_nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      background-color: #7348c9;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    #top_nav li {
+      margin: 0;
+    }
+
+    #top_nav a {
+      color: white;
+      padding: 14px 20px;
+      display: block;
+      text-decoration: none;
+    }
+
+    #top_nav a:hover {
+      background-color: #575757;
+    }
+
+    #keys {
+      font-size: 2em;
+      margin-top: 2em;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  </style>
+
+  <script>
+    function displayKey(e) {
+      var keycode = e.keyCode || e.which;
+      var character = String.fromCharCode(keycode);
+      var lowerChar = character.toLowerCase();
+
+      // Convert vowels to uppercase
+      if ("aeiou".includes(lowerChar)) {
+        character = character.toUpperCase();
+      }
+
+      // Display the character
+      var keysParagraph = document.getElementById('keys');
+      keysParagraph.innerHTML = `You pressed: ${character}`;
+
+      // RGB color logic
+      switch (lowerChar) {
+        case 'r':
+          document.body.style.backgroundColor = 'red';
+          document.body.style.color = 'white';
+          break;
+        case 'g':
+          document.body.style.backgroundColor = 'green';
+          document.body.style.color = 'white';
+          break;
+        case 'b':
+          document.body.style.backgroundColor = 'blue';
+          document.body.style.color = 'white';
+          break;
+        default:
+          document.body.style.backgroundColor = '';
+          document.body.style.color = '';
+      }
+    }
+
+    function resetPage() {
+      location.reload(); 
+    }
+
+    window.onload = function () {
+      fetch("navbar.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("navbar").innerHTML = data;
+        });
+    };
+  </script>
+</head>
+
+<body onkeypress="displayKey(event)">
+  <div id="navbar"></div>
+
+  <h1>Key Press Demo</h1>
+  <p>This page captures what keys you press and changes accordingly as well as uppercase vowels.</p>
+
+  <!-- Display Keypress Output -->
+  <div id="keys">Press any key...</div>
+
+  <!-- Reset Button -->
+  <button onclick="resetPage()">Reset Page</button>
+</body>
+</html>

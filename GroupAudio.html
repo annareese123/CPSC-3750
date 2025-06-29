@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Group Audio</title>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  #top_nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #8f1919;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  #top_nav li {
+    margin: 0;
+  }
+
+  #top_nav a {
+    color: white;
+    padding: 14px 20px;
+    display: block;
+    text-decoration: none;
+  }
+
+  #top_nav a:hover {
+    background-color: #575757;
+  }
+
+  .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 40px);
+    text-align: center;
+    padding-top: 60px;
+  }
+
+  audio, button, input {
+    margin: 10px;
+  }
+</style>
+
+</head>
+<body>
+  <div id="navbar"></div>
+ 
+  <div class="center">
+    <!-- Audio being played -->
+    <audio id="audio" controls>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Buttons And Controls -->
+    <button onclick="showPlayed()">Show Played</button>
+    <button onclick="pauseAudio()">Pause Audio</button>
+    <input type="range" min="0" max="1" step="0.1" onchange="changeVolume(this.value)">
+    <button onclick="showDuration()">Show Duration</button>
+    <button onclick="showCurrentTime()">Show Current Time</button>
+
+    <p id="output"></p>
+  </div>
+
+  <script>
+    // Fetching navbar
+    fetch("navbar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+      });
+
+    // Getting audio
+    const audio = document.getElementById("audio");
+    const output = document.getElementById("output");
+
+    // Show if audio has played or not
+    function showPlayed() {
+      output.textContent = audio.played.length > 0 ? "Audio Has Played" : "Audio Has Not Played";
+    }
+
+    // Pause audio
+    function pauseAudio() {
+      audio.pause();
+      output.textContent = "Audio Paused";
+    }
+
+    // Change volume
+    function changeVolume(val) {
+      audio.volume = val;
+      output.textContent = "Volume Set To " + val;
+    }
+
+    // Duration of audio
+    function showDuration() {
+      output.textContent = "Duration: " + audio.duration.toFixed(2) + " Seconds";
+    }
+
+    // Current playback time
+    function showCurrentTime() {
+      output.textContent = "Current Time: " + audio.currentTime.toFixed(2) + " Seconds";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Interactive Page</title>
+
+  <!-- jQuery and jQuery UI -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding-top: 50px;
+    }
+
+    #top_nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      background-color: #2bc7cc;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    #top_nav li {
+      margin: 0;
+    }
+
+    #top_nav a {
+      color: white;
+      padding: 14px 20px;
+      display: block;
+      text-decoration: none;
+    }
+
+    #top_nav a:hover {
+      background-color: #575757;
+    }
+
+    .interactive-div {
+      border: 1px solid black;
+      padding: 10px;
+      margin: 10px;
+      background-color: white;
+    }
+
+    button {
+      margin: 5px;
+    }
+
+    #progressbar {
+      width: 300px;
+      margin-top: 20px;
+    }
+
+    #accordion {
+      width: 300px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <div style="padding: 20px;">
+    <h1>Welcome to My jQuery Page</h1>
+
+    <!-- Fade Buttons -->
+    <button id="fade1">Fade Div 1</button>
+    <button id="fade2">Fade Div 2</button>
+    <button id="fade3">Fade Div 3</button>
+
+    <!-- Divs With Paragraphs -->
+    <div id="div1" class="interactive-div">
+      <p>First Paragraph In Div 1</p>
+      <p>Second Paragraph In Div 1</p>
+    </div>
+
+    <div id="div2" class="interactive-div">
+      <p>First Paragraph In Div 2</p>
+      <p>Second Paragraph In Div 2</p>
+    </div>
+
+    <div id="div3" class="interactive-div">
+      <p>First Paragraph In Div 3</p>
+      <p>Second Paragraph In Div 3</p>
+    </div>
+
+    <!-- Date picker -->
+    <p>Select A Date: <input type="text" id="datepicker"></p>
+
+    <!-- Accordion -->
+    <div id="accordion">
+      <h3>Section 1</h3>
+      <div><p>Section 1 Content</p></div>
+      <h3>Section 2</h3>
+      <div><p>Section 2 Content</p></div>
+      <h3>Section 3</h3>
+      <div><p>Section 3 Content</p></div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div id="progressbar"></div>
+  </div>
+
+  <script>
+    // navbar fetching
+    $(document).ready(function () {
+      $.get("navbar.html", function (data) {
+        $("#navbar").html(data);
+      });
+
+      // Mouse Events
+      $(".interactive-div").on("mouseenter", function () {
+        $(this).css("background-color", "yellow");
+      }).on("mouseleave", function () {
+        $(this).css("background-color", "white");
+      });
+
+      // Fade Buttons
+      $("#fade1").click(function () { $("#div1").fadeOut(); });
+      $("#fade2").click(function () { $("#div2").fadeOut(); });
+      $("#fade3").click(function () { $("#div3").fadeOut(); });
+
+      // Date picker
+      $("#datepicker").datepicker();
+      // Accordion
+      $("#accordion").accordion();
+
+      // Progress Bar Updating Over 20 Seconds
+      $("#progressbar").progressbar({ value: 0 });
+      let progress = 0;
+      const interval = setInterval(function () {
+        progress++;
+        $("#progressbar").progressbar("value", progress * 5);
+        if (progress >= 20) clearInterval(interval);
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
